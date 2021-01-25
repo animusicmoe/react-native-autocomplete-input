@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View,
+  View
 } from 'react-native';
 
 // Keep this line for downwards compatibility with RN.
