@@ -7,12 +7,10 @@ import {
   Text,
   TextInput,
   View,
-  ViewPropTypes as RNViewPropTypes
 } from 'react-native';
 
 // Keep this line for downwards compatibility with RN.
 // eslint-disable-next-line react/forbid-foreign-prop-types
-const ViewPropTypes = RNViewPropTypes || View.propTypes;
 
 const Autocomplete = (props) => {
   const {
@@ -116,7 +114,9 @@ Autocomplete.propTypes = {
    * These styles will be applied to the container which
    * surrounds the autocomplete component.
    */
-  containerStyle: ViewPropTypes.style,
+  containerStyle:  PropTypes.shape({
+    style: PropTypes.any,
+  }),
   /**
    * Assign an array of data objects which should be
    * rendered in respect to the entered text.
@@ -130,7 +130,9 @@ Autocomplete.propTypes = {
    * These styles will be applied to the container which surrounds
    * the textInput component.
    */
-  inputContainerStyle: ViewPropTypes.style,
+  inputContainerStyle:  PropTypes.shape({
+    style: PropTypes.any,
+  }),
   /*
    * Set `keyboardShouldPersistTaps` to true if RN version is <= 0.39.
    */
@@ -142,11 +144,15 @@ Autocomplete.propTypes = {
    * These styles will be applied to the container which surrounds
    * the result list.
    */
-  listContainerStyle: ViewPropTypes.style,
+  listContainerStyle:  PropTypes.shape({
+    style: PropTypes.any,
+  }),
   /**
    * These style will be applied to the result list.
    */
-  listStyle: ViewPropTypes.style,
+  listStyle:  PropTypes.shape({
+    style: PropTypes.any,
+  }),
   /**
    * `onShowResults` will be called when list is going to
    * show/hide results.
